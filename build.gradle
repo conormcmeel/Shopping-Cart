@@ -1,0 +1,23 @@
+defaultTasks 'clean', 'build'
+
+apply plugin: 'maven'
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+repositories {
+    jcenter()
+    mavenLocal()
+    mavenCentral()
+}
+
+idea.module {
+    downloadSources = true
+}
+
+dependencies {
+    testCompile 'org.mockito:mockito-core:1.+'
+    testCompile 'org.assertj:assertj-core:2.0.0'
+    testCompile 'junit:junit:4.11'
+}
+
